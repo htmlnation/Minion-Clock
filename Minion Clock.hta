@@ -1,0 +1,33 @@
+<SCRIPT LANGUAGE="VBScript">
+window.resizeTo 340,190
+Dim timerID
+Dim objShell :Set objShell = CreateObject("WScript.Shell")
+Dim dtmStartTime
+
+       
+Sub Window_OnLoad
+  window.document.body.background = "c:\ClockBackround\minS.jpg"
+  timerID = window.setInterval("RefreshTime", 1000) 'milliseconds
+  RefreshTime
+End Sub
+
+Sub RefreshTime
+   CurrentTime.InnerHTML = Now
+End Sub
+
+Sub OnClickButtonStop()
+  window.clearInterval(timerID)
+End Sub
+</SCRIPT>
+
+
+<body>
+<BR>
+
+<font color="red" size="3" face="BatangChe" align="center">
+<span id="CurrentTime"></span>
+<BR><BR>
+<b>
+  <PRE ID=myClock>  </PRE></b></font>
+</body>
+</html>
